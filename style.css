@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
 * {
-    margin : 0;
-    padding : 0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     border: none;
@@ -10,7 +11,7 @@
     font-family: 'Nunito', 'sans-serif';
 }
 
-:root{
+:root {
     --bg-color: #191f36;
     --snd-bg-color: #262b40;
     --text-color: #ffff;
@@ -22,20 +23,20 @@ html {
     overflow-x: hidden;
 }
 
-body{
+body {
     background: var(--bg-color);
     color: var(--text-color);
 }
 
-section{
+section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
 }
 
-.header{
+.header {
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
     padding: 2rem 9%;
     background: var(--bg-color);
@@ -44,6 +45,7 @@ section{
     align-items: center;
     z-index: 100;
 }
+
 .logo {
     font-size: 2.5rem;
     color: var(--text-color);
@@ -74,6 +76,12 @@ section{
     justify-content: center;
     align-items: center;
 }
+
+/* Navbar transition for smooth toggle */
+.navbar {
+    transition: all 0.3s ease;
+}
+
 .home-content h3 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -83,15 +91,16 @@ section{
     margin-bottom: 2rem;
 }
 
-span{
+span {
     color: var(--main-color);
 }
 
 .home-content h1 {
     font-size: 5.6rem;
-    font-weight:700;
+    font-weight: 700;
     line-height: 1.3;
 }
+
 .home-content p {
     font-size: 1.6rem;
 }
@@ -101,7 +110,7 @@ span{
     justify-content: center;
     align-items: center;
     width: 4rem;
-    height:4rem;
+    height: 4rem;
     background: transparent;
     border: .2rem solid var(--main-color);
     border-radius: 50%;
@@ -116,6 +125,7 @@ span{
     color: var(--snd-bg-color);
     box-shadow: 0 0 1rem var(--main-color);
 }
+
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
@@ -128,16 +138,19 @@ span{
     font-weight: 900;
     transition: .5s ease;
 }
+
 .btn:hover {
     box-shadow: none;
 }
+
 .about {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background: var(--snd-bg-color);    
+    background: var(--snd-bg-color);
 }
+
 .heading {
     text-align: center;
     font-size: 4.5rem;
@@ -151,10 +164,12 @@ span{
 .about-content h3 {
     font-size: 2.6rem;
 }
+
 .about-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
 }
+
 .services h2 {
     margin-bottom: 5rem;
 }
@@ -198,7 +213,6 @@ span{
 
 .portfolio {
     background: var(--snd-bg-color);
-    height: 0.5rem;
 }
 
 .portfolio h2 {
@@ -290,7 +304,7 @@ span{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-} 
+}
 
 .contact form .input-box input,
 .contact form textarea {
@@ -300,7 +314,7 @@ span{
     color: var(--text-color);
     background: var(--snd-bg-color);
     border-radius: .8rem;
-    margin:.7rem 0;
+    margin: .7rem 0;
 }
 
 .contact form .input-box input {
@@ -329,7 +343,7 @@ span{
     font-size: 1.6rem;
 }
 
-.footer-iconTop{
+.footer-iconTop {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -343,7 +357,7 @@ span{
     box-shadow: 0 0 1rem var(--main-color);
 }
 
-.footer-iconTop a i{
+.footer-iconTop a i {
     font-size: 2.4rem;
     color: var(--snd-bg-color);
 }
@@ -359,9 +373,10 @@ span{
     .header {
         padding: 2rem 3%
     }
-    
-    .section {
-        padding: 10rem 3%
+
+    section {
+        padding: 8rem 3% 4rem;
+        min-height: auto;
     }
 
     .services {
@@ -389,24 +404,24 @@ span{
     .navbar {
         position: absolute;
         top: 100%;
-        left: 0;
+        left: -100%;
         width: 100%;
         padding: 1rem 3%;
         background: var(--bg-color);
         border-top: .1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-        display: none;
+        transition: .3s ease;
     }
 
     .navbar.active {
-        display: block;
+        left: 0;
     }
 
     .navbar a {
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
-    } 
+    }
 
     .home {
         flex-direction: column;
@@ -446,7 +461,7 @@ span{
         margin-bottom: 3rem;
     }
 
-    .portfolio-container{
+    .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
